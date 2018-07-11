@@ -2,7 +2,7 @@ xCoord = 50
 yCoord= 50
 xSpeed = 3
 ySpeed= 3
-ellipseSize= 40
+ellipseSize= 10
 
 def setup():
     size(400, 400)
@@ -12,17 +12,18 @@ def setup():
 def draw():
     background (0)
     global xCoord, yCoord, xSpeed, ySpeed, ellipseSize 
-    leftBoundary = ellipseSize / 2
-    rightBoundary = 400 - ellipseSize / 2
     topBoundary = ellipseSize / 2 
     bottomBoundary = 400 - ellipseSize / 2
-    xCoord += xSpeed
+    
+    leftBoundary = ellipseSize / 2
+    rightBoundary = 800 - ellipseSize / 2
+    
     yCoord += ySpeed
     
-    if xCoord >= rightBoundary or xCoord <= leftBoundary:
-     xSpeed= -xSpeed
-     if yCoord >= bottomBoundary or yCoord <= topBoundary:
+    
+
+    if yCoord >= bottomBoundary or yCoord <= topBoundary:
       ySpeed = -ySpeed
 
     fill(255, 255, 0)
-    ellipse(xCoord, yCoord, ellipseSize, ellipseSize)
+    ellipse(yCoord, yCoord, ellipseSize, ellipseSize)
